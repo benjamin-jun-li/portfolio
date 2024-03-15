@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { IoMenu } from "react-icons/io5";
 
 const navbarLinkStyle =
   "px-2 py-1 text-lg font-semibold tracking-wide shadow-[0_6px_0_rgb(34,34,34)] hover:shadow-[0_4px_0px_rgb(34,34,34)] text-slate-200 bg-gradient-to-b from-cyan-700 to-cyan-900 ease-out hover:translate-y-0.5 transition-all rounded-md";
@@ -8,7 +11,7 @@ const Header = () => {
   return (
     <header className="w-full flex flex-row justify-between my-3 px-4 sm:px-6 md:px-16 lg:px-28 xl:px-60 2xl:px-72">
       <div className="flex items-center space-x-4">
-        <Link className="flex items-center space-x-2" href="#">
+        <Link className="flex items-center space-x-2" href="/">
           <Image
             src={"https://github.com/benjamin-jun-li.png"}
             alt="profile"
@@ -21,7 +24,8 @@ const Header = () => {
           </span>
         </Link>
       </div>
-      <nav className="flex items-center space-x-6 ">
+      <MobileNavMenu className="relative md:hidden" />
+      <nav className="hidden md:flex items-center space-x-6 ">
         <Link className={navbarLinkStyle} href="/projects">
           projects
         </Link>
@@ -40,6 +44,33 @@ const Header = () => {
         </Link>
       </nav>
     </header>
+  );
+};
+
+const MobileNavMenu = ({ className }: { className: string }) => {
+  return (
+    <NavigationMenu.Root className={className}>
+      <NavigationMenu.List className="relative pt-2">
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger className="flex flex-row justify-center items-center">
+            <IoMenu />
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content className="absolute right-1 w-32 border-y-[2px] border-y-teal-800">
+            <ul>
+              <li className="hover:bg-slate-800 transition rounded-md p-2">
+                <Link href="/projects">projects</Link>
+              </li>
+              <li className="hover:bg-slate-800 transition rounded-md p-2">
+                <Link href="/posts">posts</Link>
+              </li>
+              <li className="hover:bg-slate-800 transition rounded-md p-2">
+                <Link href="/snippets">code snippets</Link>
+              </li>
+            </ul>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
   );
 };
 
