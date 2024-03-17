@@ -1,6 +1,7 @@
 "use client";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { memo } from "react";
 
 const words = [
   {
@@ -15,7 +16,7 @@ const words = [
   },
 ];
 
-const TypingTitle = () => {
+const TypingTitle = memo(() => {
   return (
     <>
       <TypewriterEffectSmooth words={words} />
@@ -39,6 +40,8 @@ const TypingTitle = () => {
       </div>
     </>
   );
-};
+});
+
+TypingTitle.displayName = "TypingTitle";
 
 export default TypingTitle;

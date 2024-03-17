@@ -6,6 +6,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import React, { Suspense } from "react";
 import FloatingMenu from "@/components/floating-menu";
+import { BackgroundBeams } from "@/components/ui/background-beam";
+import { AnimatePresence } from "framer-motion";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({
         </div>
         <FloatingMenu />
         <Footer />
+        <BackgroundBeams />
       </body>
     </html>
   );

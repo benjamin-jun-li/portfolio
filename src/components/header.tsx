@@ -26,22 +26,22 @@ const Header = () => {
       </div>
       <MobileNavMenu className="relative md:hidden" />
       <nav className="hidden md:flex items-center space-x-6 ">
-        <Link className={navbarLinkStyle} href="/projects">
+        <a href="/projects" className={navbarLinkStyle}>
           projects
-        </Link>
-        <Link className={navbarLinkStyle} href="/posts">
+        </a>
+        <a href="/posts" className={navbarLinkStyle}>
           posts
-        </Link>
-        <Link className={navbarLinkStyle} href="/snippets">
+        </a>
+        <a href="/snippets" className={navbarLinkStyle}>
           code snippets
-        </Link>
-        <Link
+        </a>
+        <a
           target="_blank"
           className={navbarLinkStyle}
           href="https://drive.google.com/file/d/1Q-8epyxp0d-jNhaL2YjAS6q-sb_0NrUA/view?usp=drive_link"
         >
           resume/CV
-        </Link>
+        </a>
       </nav>
     </header>
   );
@@ -58,13 +58,13 @@ const MobileNavMenu = ({ className }: { className: string }) => {
           <NavigationMenu.Content className="absolute right-1 w-32 border-y-[2px] border-y-teal-800">
             <ul>
               <li className="hover:bg-slate-800 transition rounded-md p-2">
-                <Link href="/projects">projects</Link>
+                <a href="/projects">projects</a>
               </li>
               <li className="hover:bg-slate-800 transition rounded-md p-2">
-                <Link href="/posts">posts</Link>
+                <a href="/posts">posts</a>
               </li>
               <li className="hover:bg-slate-800 transition rounded-md p-2">
-                <Link href="/snippets">code snippets</Link>
+                <a href="/snippets">code snippets</a>
               </li>
             </ul>
           </NavigationMenu.Content>

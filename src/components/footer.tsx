@@ -36,7 +36,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:underline  w-full flex">
+            <a href="#" className="hover:underline w-full flex">
               <FaGithub className="w-6 h-6" />
               &nbsp;Github
             </a>
