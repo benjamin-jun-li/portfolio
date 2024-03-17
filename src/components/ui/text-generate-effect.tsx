@@ -1,17 +1,19 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/utils/cn";
+import { IoDiceOutline } from "react-icons/io5";
 
 export const TextGenerateEffect = ({
-  words,
+  sentences,
   className,
 }: {
-  words: string;
+  sentences: string[];
   className?: string;
 }) => {
+  const [isSpinning, setIsSpinning] = useState(false);
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordArray = sentences[0].split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -25,28 +27,31 @@ export const TextGenerateEffect = ({
     );
   }, [scope.current]);
 
-  const renderWords = () => {
-    return (
-      <motion.div className="w-fit" ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className="dark:text-white text-slate-200 opacity-0"
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  const iconOnClick = () => {
+    setIsSpinning(true);
+    setTimeout(() => {
+      setIsSpinning(false);
+    }, 1000);
+  }
 
   return (
-    <div className={cn("font-bold mt-4", className)}>
-      <div className="dark:text-white text-slate-200 text-2xl leading-snug tracking-wide">
-        {renderWords()}
-      </div>
+    <div
+      className={cn(
+        "font-bold mt-4 text-slate-200 text-2xl leading-snug tracking-wide relative",
+        className
+      )}
+    >
+      <motion.div className="pr-6" ref={scope}>
+        {wordArray.map((word, idx) => (
+          <motion.span
+            key={word + idx}
+            className="dark:text-white text-slate-200 opacity-0"
+          >
+            {word}{" "}
+          </motion.span>
+        ))}
+      </motion.div>
+      <IoDiceOutline onClick={iconOnClick} className={cn("w-8 h-8 absolute top-5 right-0 cursor-pointer", isSpinning ? "animate-spin-fast-then-slow" : null)} />
     </div>
   );
 };

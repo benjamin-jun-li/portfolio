@@ -1,9 +1,7 @@
-"use client";
 import React, { memo } from "react";
 import { FloatingNav } from "./ui/floating-navbar";
 import { FaCode, FaProjectDiagram } from "react-icons/fa";
 import { MdOutlineEditNote } from "react-icons/md";
-import { AnimatePresence } from "framer-motion";
 const FloatingMenu = memo(() => {
   const navItems = [
     {

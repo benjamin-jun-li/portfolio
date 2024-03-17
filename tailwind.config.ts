@@ -14,7 +14,20 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        "spin-fast-then-slow": {
+          '0%': { transform: 'rotate(0deg)' },
+          '33%': { transform: 'rotate(1800deg)' },
+          '66%': { transform: 'rotate(1800deg)' },
+          '100%': { transform: 'rotate(3600deg)' },
+        },
+      },
+      animation: {
+        "spin-fast-then-slow": 'spin-fast-then-slow 2.5s cubic-bezier(0.15, 0.85, 0.35, 1) forwards'
+      },
+
+    },
   },
   plugins: [addVariablesForColors],
 };
