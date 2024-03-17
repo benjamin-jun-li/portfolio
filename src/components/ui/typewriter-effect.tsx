@@ -35,8 +35,8 @@ export const TypewriterEffect = ({
           opacity: 1,
         },
         {
-          duration: 0.3,
-          delay: stagger(0.1),
+          duration: 0.1,
+          delay: stagger(0.05),
           ease: "easeInOut",
         }
       );
@@ -139,7 +139,7 @@ export const TypewriterEffectSmooth = ({
   };
 
   return (
-    <div className={cn("flex space-x-1 my-6", className)}>
+    <div className={cn("flex space-x-1 mt-6", className)}>
       <motion.div
         className="overflow-hidden pb-2"
         initial={{
@@ -155,7 +155,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text:5xl xl:text-5xl font-bold"
           style={{
             whiteSpace: "nowrap",
           }}

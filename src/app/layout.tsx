@@ -4,7 +4,8 @@ import "./globals.css";
 import { cn } from "@/utils/cn";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import React from "react";
+import React, { Suspense } from "react";
+import FloatingMenu from "@/components/floating-menu";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,8 +24,9 @@ export default function RootLayout({
       <body className={cn("box-border bg-cyan-900", inter.className)}>
         <div className="min-h-screen">
           <Header />
-          {children}
+          <Suspense>{children}</Suspense>
         </div>
+        <FloatingMenu />
         <Footer />
       </body>
     </html>
