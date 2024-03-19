@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import MobileMenuBar from "./mobile-menubar";
 
 const navbarLinkStyle =
-  "px-2 py-1 text-lg font-semibold tracking-wide shadow-[0_6px_0_rgb(34,34,34)] hover:shadow-[0_4px_0px_rgb(34,34,34)] text-slate-200 bg-gradient-to-b from-cyan-700 to-cyan-900 ease-out hover:translate-y-0.5 transition-all rounded-md";
+  "px-2 py-1 text-lg font-semibold tracking-wide text-slate-200 bg-gradient-to-b from-indigo-700 to-cyan-900 hover:scale-110 transition-transform duration-200 rounded-md";
 
 const Header = () => {
   return (

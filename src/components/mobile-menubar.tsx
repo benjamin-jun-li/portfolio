@@ -65,17 +65,17 @@ const MobileMenuBar = ({ className }: { className: string }) => {
         className="flex flex-col items-end"
       >
         <motion.li variants={itemVariants}>
-          <Link href="/projects" className="hover:text-cyan-600">
+          <Link href="/projects" className="hover:text-cyan-900">
             projects
           </Link>
         </motion.li>
         <motion.li variants={itemVariants}>
-          <Link href="posts" className="hover:text-cyan-600">
+          <Link href="posts" className="hover:text-cyan-900">
             posts
           </Link>
         </motion.li>
         <motion.li variants={itemVariants}>
-          <Link href="/snippets" className="hover:text-cyan-600">
+          <Link href="/snippets" className="hover:text-cyan-900">
             code snippets
           </Link>
         </motion.li>

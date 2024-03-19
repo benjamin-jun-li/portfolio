@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("box-border bg-cyan-900", inter.className)}>
+      <body className={cn("box-border bg-indigo-950", inter.className)}>
         <div className="min-h-screen">
           <Header />
           <Suspense>{children}</Suspense>

@@ -6,6 +6,7 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/utils/cn";
 import { motion, useAnimation } from "framer-motion";
+import TypeWriter from "./type-writer";
 
 type ParticlesProps = {
   id?: string;
@@ -17,8 +18,9 @@ type ParticlesProps = {
   speed?: number;
   particleColor?: string;
   particleDensity?: number;
+  text: string;
 };
-export const SparklesCore = (props: ParticlesProps) => {
+const SparklesTitle = (props: ParticlesProps) => {
   const {
     id,
     className,
@@ -28,6 +30,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     speed,
     particleColor,
     particleDensity,
+    text,
   } = props;
   const [init, setInit] = useState(false);
   useEffect(() => {
@@ -51,11 +54,14 @@ export const SparklesCore = (props: ParticlesProps) => {
   };
 
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
+    <motion.div
+      animate={controls}
+      className={cn("opacity-0 relative", className)}
+    >
       {init && (
         <Particles
           id={id || "tsparticles"}
-          className={cn("h-full w-full")}
+          className={cn("absolute -top-3 h-10 xs:h-12 sm:h-14 md:h-20 w-full")}
           particlesLoaded={particlesLoaded}
           options={{
             background: {
@@ -428,6 +434,12 @@ export const SparklesCore = (props: ParticlesProps) => {
           }}
         />
       )}
+      <TypeWriter
+        text={text}
+        className="text-lg xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-wide"
+      />
     </motion.div>
   );
 };
+
+export default SparklesTitle;
