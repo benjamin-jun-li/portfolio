@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 type Tab = {
   title: string;
@@ -52,7 +52,7 @@ export const Tabs = ({
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
             className={cn(
-              "relative px-4 py-2 rounded-full w-[14%]",
+              "relative px-4 py-2 rounded-full w-[15%]",
               tabClassName
             )}
             style={{
@@ -64,13 +64,15 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-fuchsia-950/75 rounded-xl",
+                  "absolute inset-0 bg-blue-950/75 rounded-xl",
                   activeTabClassName
                 )}
               />
             )}
 
-            <span className="relative block text-neutral-100">{tab.title}</span>
+            <span className="relative block text-neutral-100 text-2xl">
+              {tab.title}
+            </span>
           </button>
         ))}
       </div>

@@ -7,7 +7,7 @@ const sentences = [
 
 const Subtitle = memo(() => {
   return (
-    <div className="flex flex-col w-[60%] justify-center">
+    <div className="flex flex-col w-[90%] xl:w-[70%] justify-center mb-10">
       <TextGenerateEffect className="w-fit" sentences={sentences} />
       <p className="justify-start mt-4 font-semibold text-lg tracking-wide text-neutral-100">
         I am currently working as a frontend programming course tutor @UNSW, based in Melbourne. And I am actively seeking for a full-time role!🦉

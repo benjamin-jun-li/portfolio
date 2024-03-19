@@ -22,9 +22,18 @@ module.exports = {
           '66%': { transform: 'rotate(1800deg)' },
           '100%': { transform: 'rotate(3600deg)' },
         },
+        "meteor": {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
-        "spin-fast-then-slow": 'spin-fast-then-slow 2.5s cubic-bezier(0.15, 0.85, 0.35, 1) forwards'
+        "spin-fast-then-slow": 'spin-fast-then-slow 2.5s cubic-bezier(0.15, 0.85, 0.35, 1) forwards',
+        "meteor-effect": "meteor 5s linear infinite",
       },
 
     },

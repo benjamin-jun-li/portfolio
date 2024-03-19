@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import React, { Suspense } from "react";
 import FloatingMenu from "@/components/floating-menu";
 import { BackgroundBeams } from "@/components/ui/background-beam";
+import MotionProvider from "@/providers/motion-provider";
 const inter = Fira_Sans({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body className={cn("box-border bg-indigo-950", inter.className)}>
         <div className="min-h-screen">
           <Header />
-          <Suspense>{children}</Suspense>
+          <Suspense>
+            <MotionProvider>{children}</MotionProvider>
+          </Suspense>
         </div>
         <FloatingMenu />
         <Footer />

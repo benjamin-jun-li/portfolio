@@ -12,7 +12,7 @@ const TypingTitle = memo(() => {
         minSize={0.4}
         maxSize={1}
         particleDensity={1200}
-        className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mt-4 md:mt-14 xl:mt-20 h-full flex justify-center"
+        className="w-[90%] sm:w-[80%] md:w-[70%] mt-4 md:mt-14 xl:mt-20 h-full flex justify-center"
         particleColor="#FFFFFF"
         text={text}
       />
