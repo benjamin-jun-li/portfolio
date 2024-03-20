@@ -5,17 +5,17 @@ import { MdOutlineEditNote } from "react-icons/md";
 const FloatingMenu = memo(() => {
   const navItems = [
     {
-      name: "projects",
+      name: "Projects",
       link: "/projects",
       icon: <FaProjectDiagram />,
     },
     {
-      name: "posts",
+      name: "Posts",
       link: "/posts",
       icon: <MdOutlineEditNote />,
     },
     {
-      name: "code snippets",
+      name: "Code Snippets",
       link: "/snippets",
       icon: <FaCode />,
     },

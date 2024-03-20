@@ -66,17 +66,17 @@ const MobileMenuBar = ({ className }: { className: string }) => {
       >
         <motion.li variants={itemVariants}>
           <Link href="/projects" className="hover:text-cyan-900">
-            projects
+            Projects
           </Link>
         </motion.li>
         <motion.li variants={itemVariants}>
           <Link href="posts" className="hover:text-cyan-900">
-            posts
+            Posts
           </Link>
         </motion.li>
         <motion.li variants={itemVariants}>
           <Link href="/snippets" className="hover:text-cyan-900">
-            code snippets
+            Code Snippets
           </Link>
         </motion.li>
       </motion.ul>

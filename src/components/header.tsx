@@ -42,20 +42,20 @@ const Header = () => {
 
       <nav className="hidden md:flex items-center space-x-6 ">
         <Link href="/projects" className={navbarLinkStyle}>
-          projects
+          Projects
         </Link>
         <Link href="/posts" className={navbarLinkStyle}>
-          posts
+          Posts
         </Link>
         <Link href="/snippets" className={navbarLinkStyle}>
-          code snippets
+          Code Snippets
         </Link>
         <Link
           target="_blank"
           className={navbarLinkStyle}
           href="https://drive.google.com/file/d/1Q-8epyxp0d-jNhaL2YjAS6q-sb_0NrUA/view?usp=drive_link"
         >
-          resume/CV
+          Resume/CV
         </Link>
       </nav>
     </header>
