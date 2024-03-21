@@ -1,7 +1,6 @@
 import Meteors from "../ui/meteor";
 import TechStackGrid from "./tech-stack-grid";
-
-const items = ["Str", "Net", "Goo", "Met", "Ama", "Mic"];
+import { techMap } from "@/lib/data";
 
 const TechStack = () => {
   return (
@@ -14,9 +13,9 @@ const TechStack = () => {
         interest 🎉
       </p>
       <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-sky-900/80 to-slate-800/80">
-        <div className="grid grid-cols-4">
-          {["Frontend", "Backend", "Database", "Tools"].map((title) => (
-            <TechStackGrid title={title} items={items} />
+        <div className="grid grid-cols-5">
+          {Object.keys(techMap).map((title) => (
+            <TechStackGrid title={title} items={techMap[title]} />
           ))}
         </div>
         <Meteors number={20} />

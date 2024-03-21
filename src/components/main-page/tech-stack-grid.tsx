@@ -1,10 +1,16 @@
-import { HoverEffect } from "../ui/card-hover-effect";
+import HoverTechIcon from "../ui/hover-icon";
 
-const TechStackGrid = ({ title, items }: { title: string, items: string[] }) => {
+const TechStackGrid = ({
+  title,
+  items,
+}: {
+  title: string;
+  items: { [key: string]: string };
+}) => {
   return (
-    <section className="flex flex-col m-0 items-center justify-center">
-      <h4>{title}</h4>
-      <HoverEffect items={items} />
+    <section className="flex flex-col m-0 items-center">
+      <h4 className="text-2xl">{title}</h4>
+      <HoverTechIcon items={items} />
     </section>
   );
 };
