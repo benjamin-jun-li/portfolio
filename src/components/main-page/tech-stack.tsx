@@ -14,8 +14,8 @@ const TechStack = () => {
       </p>
       <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-sky-900/80 to-slate-800/80">
         <div className="grid grid-cols-5">
-          {Object.keys(techMap).map((title) => (
-            <TechStackGrid title={title} items={techMap[title]} />
+          {Object.keys(techMap).map((title, idx) => (
+            <TechStackGrid key={`tech${idx}`} title={title} items={techMap[title]} />
           ))}
         </div>
         <Meteors number={20} />

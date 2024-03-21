@@ -10,7 +10,13 @@ const tabs = [
     value: "draw-hero",
     content: (
       <div className={tabStyle}>
-        <ProjectCard text=""/>
+        <ProjectCard
+          title="Draw Hero"
+          description="Team Collaborated Visual Tooling Platform"
+          tech="TypeScript Next.js Tailwind CSS Convex"
+          demo="https://draw-hero.vercel.app"
+          source="https://github.com/benjamin-jun-li/draw-hero"
+        />
       </div>
     ),
   },
@@ -19,16 +25,21 @@ const tabs = [
     value: "tutor-trackr",
     content: (
       <div className={tabStyle}>
-        <ProjectCard text=""/>
+        <ProjectCard
+          title="Tutor Trackr"
+          description="Tutor Management Platform"
+          tech="TypeScript Next.js GraphQL Prisma MongoDB"
+          source="https://github.com/benjamin-jun-li/tutor-trackr"
+        />
       </div>
     ),
   },
   {
-    title: "Tools",
-    value: "Tools",
+    title: "Big Brain",
+    value: "big-brain",
     content: (
       <div className={tabStyle}>
-        <ProjectCard text=""/>
+        <ProjectCard title="Big Brain" description="A Kahoot-like quiz app made in COMP6080" tech="React.js Express.js" />
       </div>
     ),
   },

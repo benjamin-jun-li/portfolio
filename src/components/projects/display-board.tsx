@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { initialTabs as tabs } from "@/lib/data";
 import { cn } from "@/lib/utils";
+
 const DisplayBoard = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   return (

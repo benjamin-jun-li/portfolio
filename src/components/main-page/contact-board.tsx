@@ -10,7 +10,7 @@ const ContactBoard = () => {
       <h2 className="text-5xl text-neutral-200 font-semibold my-8 flex">
         Get in touch <IoIosArrowForward />
       </h2>
-      <div className="w-full h-full grid grid-cols-2 rounded-2xl p-10 text-xl font-bold text-white bg-gradient-to-br from-slate-800/80 to-stone-800">
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 rounded-2xl p-10 text-xl font-bold text-white bg-gradient-to-br from-slate-800/80 to-stone-800">
         <p className="text-3xl">
           Feel free to reach out if you wanna work with me or just have a chat✨
         </p>

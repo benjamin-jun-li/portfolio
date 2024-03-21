@@ -22,11 +22,10 @@ const HoverTechIcon = ({
   return (
     <ul className={cn("grid grid-cols-2 lg:grid-cols-3", className)}>
       {Object.keys(items).map((name, idx) => (
-        <TooltipProvider>
+        <TooltipProvider key={name + idx}>
           <Tooltip delayDuration={100}>
             <TooltipTrigger asChild>
               <li
-                key={idx}
                 className="relative group p-2 w-[2rem] h-[2rem] md:h-[4rem] md:w-[4rem] 2xl:h-[6rem] 2xl:w-[6rem]"
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -49,12 +48,13 @@ const HoverTechIcon = ({
                   )}
                 </AnimatePresence>
                 <div className="rounded-2xl w-full h-full text-lg p-2 bg-amber-100/10 border-2 border-indigo-950 group-hover:border-slate-700 relative z-20">
-                  <div className="w-full h-full flex flex-col justify-center items-center ">
+                  <div className="w-full h-full flex flex-col justify-center items-center">
                     <Image
                       fill
                       src={items[name]}
                       alt={name}
                       className="rounded-xl"
+                      sizes="100%"
                     />
                   </div>
                 </div>
