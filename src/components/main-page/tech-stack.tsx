@@ -13,7 +13,7 @@ const TechStack = () => {
         interest 🎉
       </p>
       <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-sky-900/80 to-slate-800/80">
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
           {Object.keys(techMap).map((title, idx) => (
             <TechStackGrid key={`tech${idx}`} title={title} items={techMap[title]} />
           ))}

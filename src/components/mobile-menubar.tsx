@@ -62,7 +62,7 @@ const MobileMenuBar = ({ className }: { className: string }) => {
           },
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
-        className="flex flex-col items-end"
+        className="flex flex-col items-end justify-end"
       >
         <motion.li variants={itemVariants}>
           <Link href="/projects" className="hover:text-cyan-900">
@@ -74,9 +74,9 @@ const MobileMenuBar = ({ className }: { className: string }) => {
             Posts
           </Link>
         </motion.li>
-        <motion.li variants={itemVariants}>
+        <motion.li variants={itemVariants} className="w-fit">
           <Link href="/snippets" className="hover:text-cyan-900">
-            Code Snippets
+            Code
           </Link>
         </motion.li>
       </motion.ul>
