@@ -26,21 +26,20 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       }
     );
-  }, [scope.current]);
+  }, [scope.current, sentenceIdx]);
 
   const iconOnClick = () => {
     setIsSpinning(true);
-    //TODO change this later
-    setSentenceIdx(0);
+    setSentenceIdx(Math.floor(Math.random() * 3));
     setTimeout(() => {
       setIsSpinning(false);
     }, 1000);
-  }
+  };
 
   return (
     <div
       className={cn(
-        "font-bold mt-4 text-slate-200 text-2xl leading-snug tracking-wide relative",
+        "font-bold mt-4 text-slate-200 text-2xl leading-snug tracking-wide w-full relative",
         className
       )}
     >
@@ -54,7 +53,13 @@ export const TextGenerateEffect = ({
           </motion.span>
         ))}
       </motion.div>
-      <IoDiceOutline onClick={iconOnClick} className={cn("w-8 h-8 absolute top-5 right-0 cursor-pointer", isSpinning ? "animate-spin-fast-then-slow" : null)} />
+      <IoDiceOutline
+        onClick={iconOnClick}
+        className={cn(
+          "w-8 h-8 absolute top-2 right-0 cursor-pointer",
+          isSpinning ? "animate-spin-fast-then-slow" : null
+        )}
+      />
     </div>
   );
 };
