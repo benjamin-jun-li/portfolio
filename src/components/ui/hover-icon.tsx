@@ -20,13 +20,13 @@ const HoverTechIcon = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <ul className={cn("grid grid-cols-2 lg:grid-cols-3", className)}>
+    <ul className={cn("grid grid-cols-4 sm:grid-cols-3", className)}>
       {Object.keys(items).map((name, idx) => (
         <TooltipProvider key={name + idx}>
           <Tooltip delayDuration={100}>
             <TooltipTrigger asChild>
               <li
-                className="relative group p-2 w-[2rem] h-[2rem] md:h-[4rem] md:w-[4rem] 2xl:h-[6rem] 2xl:w-[6rem]"
+                className="relative group p-2 w-[3rem] h-[3rem] md:h-[4rem] md:w-[4rem] lg:w-[4.3rem] lg:h-[4.3rem] xl:h-[4.7rem] xl:w-[4.7rem] 2xl:h-[5.2rem] 2xl:w-[5.2rem] 3xl:h-[6.2rem] 3xl:w-[6.2rem]"
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
