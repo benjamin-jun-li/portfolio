@@ -1,5 +1,6 @@
 import { Tabs } from "../ui/tabs";
 import ProjectCard from "../projects/project-card";
+import { projectInfo } from "@/lib/data";
 
 const tabStyle =
   "w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-indigo-900 to-sky-950";
@@ -16,6 +17,7 @@ const tabs = [
           tech="TypeScript Next.js Tailwind CSS Convex"
           demo="https://draw-hero.vercel.app"
           source="https://github.com/benjamin-jun-li/draw-hero"
+          info={projectInfo["Draw Hero"]}
         />
       </div>
     ),
@@ -30,16 +32,17 @@ const tabs = [
           description="Tutor Management Platform"
           tech="TypeScript Next.js GraphQL Prisma MongoDB"
           source="https://github.com/benjamin-jun-li/tutor-trackr"
+          info={projectInfo["Tutor Trackr"]}
         />
       </div>
     ),
   },
   {
-    title: "Big Brain",
-    value: "big-brain",
+    title: "More",
+    value: "more",
     content: (
       <div className={tabStyle}>
-        <ProjectCard title="Big Brain" description="A Kahoot-like quiz app made in COMP6080" tech="React.js Express.js" />
+        <ProjectCard title="More..." description="See more stuff on project page!" tech="🦉" info={projectInfo["More"]}/>
       </div>
     ),
   },

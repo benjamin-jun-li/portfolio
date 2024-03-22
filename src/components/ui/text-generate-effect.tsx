@@ -13,7 +13,8 @@ export const TextGenerateEffect = ({
 }) => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [scope, animate] = useAnimate();
-  const wordArray = sentences[0].split(" ");
+  const [sentenceIdx, setSentenceIdx] = useState(0);
+  const wordArray = sentences[sentenceIdx].split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -29,6 +30,8 @@ export const TextGenerateEffect = ({
 
   const iconOnClick = () => {
     setIsSpinning(true);
+    //TODO change this later
+    setSentenceIdx(0);
     setTimeout(() => {
       setIsSpinning(false);
     }, 1000);

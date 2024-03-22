@@ -1,27 +1,66 @@
-export interface Ingredient {
-  icon: string;
+import { StaticImageData } from "next/image";
+import drawHeroDashboard from "../../public/draw-hero-dashboard.png";
+import drawHeroBoard from "../../public/draw-hero-board.png";
+import drawHeroTeam from "../../public/draw-hero-team.png";
+import tutorTrackrDashboard from "../../public/ttdashboard.png";
+import tutorTrackrDetail from "../../public/ttdetail.png";
+import tutorTrackrChat from "../../public/ttchat.png";
+import bigbrain from "../../public/bigbrain_screenshot.png";
+import lurkforwork from "../../public/lurkforwork_screenshot.png";
+
+export type ImgInfo = {
   label: string;
-}
+  image: StaticImageData | null;
+};
 
-export const allIngredients = [
-  { icon: "🍅", label: "Tomato" },
-  { icon: "🥬", label: "Lettuce" },
-  { icon: "🧀", label: "Cheese" },
-  { icon: "🥕", label: "Carrot" },
-  { icon: "🍌", label: "Banana" },
-  { icon: "🫐", label: "Blueberries" },
-  { icon: "🥂", label: "Champers?" },
-];
+export type ProjectInfoT = {
+  [key: string]: ImgInfo[];
+};
 
-const [tomato, lettuce, cheese] = allIngredients;
-export const initialTabs = [tomato, lettuce, cheese];
-
-export function getNextIngredient(
-  ingredients: Ingredient[]
-): Ingredient | undefined {
-  const existing = new Set(ingredients);
-  return allIngredients.find((ingredient) => !existing.has(ingredient));
-}
+export const projectInfo: ProjectInfoT = {
+  "Tutor Trackr": [
+    {
+      label: "dashboard",
+      image: tutorTrackrDashboard,
+    },
+    {
+      label: "details",
+      image: tutorTrackrDetail,
+    },
+    {
+      label: "chat",
+      image: tutorTrackrChat,
+    }
+  ],
+  "Draw Hero": [
+    {
+      label: "dashboard",
+      image: drawHeroDashboard,
+    },
+    {
+      label: "board",
+      image: drawHeroBoard,
+    },
+    {
+      label: "Collaborate",
+      image: drawHeroTeam,
+    },
+  ],
+  More: [
+    {
+      label: "bigbrain",
+      image: bigbrain,
+    },
+    {
+      label: "lurkforwork",
+      image: lurkforwork,
+    },
+    {
+      label: "micro-react",
+      image: null,
+    }
+  ],
+};
 
 type TechCategory = {
   [key: string]: { [key: string]: string };
@@ -92,6 +131,6 @@ export const techMap: TechCategory = {
       "https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png",
     Postman:
       "https://user-images.githubusercontent.com/25181517/192109061-e138ca71-337c-4019-8d42-4792fdaa7128.png",
-    Jira: "https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png"
+    Jira: "https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png",
   },
 };

@@ -1,13 +1,18 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { initialTabs as tabs } from "@/lib/data";
+import { ImgInfo } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-const DisplayBoard = () => {
+interface DisplayBoardProps {
+  tabs: ImgInfo[];
+}
+
+const DisplayBoard = ({ tabs }: DisplayBoardProps) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   return (
-    <div className="col-span-2 bg-slate-800/40 h-full rounded-md">
+    <div className="col-span-2 row-span-2 bg-slate-800/40 h-full rounded-md">
       <nav>
         <ul className="grid grid-cols-3 text-xl">
           {tabs.map((item) => (
@@ -21,7 +26,7 @@ const DisplayBoard = () => {
               )}
               onClick={() => setSelectedTab(item)}
             >
-              {`${item.icon} ${item.label}`}
+              {item.label}
               {item === selectedTab ? (
                 <motion.div className="underline" layoutId="underline" />
               ) : null}
@@ -37,9 +42,17 @@ const DisplayBoard = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="w-full h-full grid place-items-center"
+          className="w-full h-[88%] relative text-xl"
         >
-          {selectedTab ? selectedTab.icon : "😋"}
+          {selectedTab ? (
+            selectedTab.image ? (
+              <Image fill src={selectedTab.image} alt={selectedTab.label} />
+            ) : (
+              <p className="flex justify-center">Still under progress</p>
+            )
+          ) : (
+            "🔎"
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
