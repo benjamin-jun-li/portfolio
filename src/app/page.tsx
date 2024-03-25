@@ -1,4 +1,4 @@
-import  TracingBeamContent  from "@/components/main-page/tracing-content";
+import TracingBeamContent from "@/components/main-page/tracing-content";
 import Subtitle from "@/components/main-page/subtitle";
 import TypingTitle from "@/components/main-page/typing-title";
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";

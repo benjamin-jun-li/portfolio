@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 import drawHeroDashboard from "../../public/draw-hero-dashboard.png";
 import drawHeroBoard from "../../public/draw-hero-board.png";
 import drawHeroTeam from "../../public/draw-hero-team.png";

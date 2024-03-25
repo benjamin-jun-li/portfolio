@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 
-
 const integerArray = [
   12, 300, 78, 123, 45, 345, 589, 234, 764, 90, 654, 3, 653, 276, 124, 598, 543,
   122, 834, 637,

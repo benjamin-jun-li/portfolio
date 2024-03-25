@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ImgInfo } from "@/lib/data";
+import type { ImgInfo } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
